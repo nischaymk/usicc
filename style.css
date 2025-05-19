@@ -1,0 +1,346 @@
+/* Global Styles */
+html, body {
+font-family: 'Times New Roman', Times, serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url('Untitled design_20250513_224708_0000.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: bgWave 5s infinite alternate ease-in-out;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    font-size: 20px;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.5) !important;
+    animation: fadeIn 1s ease-in-out;
+    backdrop-filter: blur(5px);
+    transition: background 0.5s ease-in-out;
+    z-index: 1050;
+    font-weight: bold;
+}
+
+.navbar:hover {
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.navbar-nav .nav-link {
+    font-size: 20px;
+    margin-right: 55px;
+    transition: all 0.3s ease-in-out;
+    color: #ffffff;
+    position: relative;
+    padding: 8px 15px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(145deg, #ffcc00, #ffaa00);
+    color: #000;
+    transform: scale(1.08);
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+/* Navbar Toggle */
+.navbar-toggler {
+    border: none;
+    transition: transform 0.3s;
+}
+.navbar-toggler:hover {
+    transform: rotate(180deg);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    flex: 1;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.hero-section h2, .hero-section p {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.hero-section h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 20px;
+}
+
+.hero-content {
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+.social-icon:hover {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bgWave {
+    0%, 100% {
+        background-size: 100%;
+        background-position: center;
+    }
+    50% {
+        background-size: 105%;
+        background-position: 48% 44%;
+    }
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
+.slide {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background: rgba(0, 0, 0, 0.85);
+}
+.dropdown-item {
+    color: white;
+    font-weight: bolder;
+}
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* ------------------- Responsive Media Queries ------------------- */
+
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+    .navbar {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        margin-right: 10px;
+        padding: 6px 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 32px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .slideshow-container {
+        max-width: 95%;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .social-icon {
+        font-size: 20px;
+        margin: 0 6px;
+    }
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
+        margin-right: 12px;
+        padding: 7px 12px;
+    }
+
+    .hero-section h2 {
+        font-size: 42px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .slideshow-container {
+        max-width: 90%;
+    }
+
+    .prev, .next {
+        font-size: 20px;
+        padding: 9px 13px;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+    .social-icon {
+        font-size: 22px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+}
+
+.responsive-heading {
+    font-weight: bold;
+    font-size: 60px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    padding: 0 10px;
+}
+
+@media (max-width: 767px) {
+    .responsive-heading {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    html, body {
+        background-attachment: scroll;
+    }
+}
