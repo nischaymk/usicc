@@ -11,82 +11,121 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <img src="USICC logo.jpeg" alt="logo" style="height: 70px;margin-right: 10px; border-radius: 50%;"/>
-            <a class="navbar-brand" href="index.html">U.S - India Cooperation Circle</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-        About us
-    </a>
-    <ul class="dropdown-menu"  aria-labelledby="aboutDropdown">
-        <li><a class="dropdown-item" href="aboutceas.html">About CEAS</a></li>
-        <li><a class="dropdown-item" href="aboutusicc.html">About USICC</a></li>
-        <li><a class="dropdown-item" href="visionobj&goals.html">Our Vision, Objectives & Goals</a></li>
-        <li><a class="dropdown-item" href="usiccteam.html">USICC team & Testimonials</a></li>
-        <li><a class="dropdown-item" href="usiccnetwork.html">USICC Network Experts</a></li>
-        
-        <!-- Submenu for Chapters -->
-        <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#">Chapters</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="student.html">Students </a></li>
-                <li><a class="dropdown-item" href="thinktank.html">Think Tank</a></li>
-                <li><a class="dropdown-item" href="media.html">Media</a></li>
-                <li><a class="dropdown-item" href="cultural.html">Cultural Diplomacy</a></li>
-                <li><a class="dropdown-item" href="environmental&climate.html">Environmental and Climate Change</a></li>
-                <li><a class="dropdown-item" href="defence&stratergic.html"> Defence and Stratergic Affairs </a></li>
+     <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Allow submenu toggling on mobile
+  document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      let nextMenu = this.nextElementSibling;
+
+      if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
+        nextMenu.classList.toggle('show');
+      }
+
+      // Close others
+      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function (menu) {
+        if (menu !== nextMenu) menu.classList.remove('show');
+      });
+    });
+  });
+
+  // Hide submenus when main dropdown is closed
+  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('hide.bs.dropdown', function () {
+      this.querySelectorAll('.dropdown-menu.show').forEach(function (submenu) {
+        submenu.classList.remove('show');
+      });
+    });
+  });
+});
+</script>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <img src="USICC logo.jpeg" alt="logo" style="height: 70px;margin-right: 10px; border-radius: 50%;" />
+        <a class="navbar-brand" href="index.html">U.S - India Cooperation Circle</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <!-- About Us Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown1" role="button" data-bs-toggle="dropdown">
+                        About us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown1">
+                        <li><a class="dropdown-item" href="aboutceas.html">About CEAS</a></li>
+                        <li><a class="dropdown-item" href="aboutusicc.html">About USICC</a></li>
+                        <li><a class="dropdown-item" href="visionobj&goals.html">Our Vision, Objectives & Goals</a></li>
+                        <li><a class="dropdown-item" href="usiccteam.html">USICC team & Testimonials</a></li>
+                        <li><a class="dropdown-item" href="usiccnetwork.html">USICC Network Experts</a></li>
+
+                        <!-- Submenu for Chapters -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Chapters</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="student.html">Students</a></li>
+                                <li><a class="dropdown-item" href="thinktank.html">Think Tank</a></li>
+                                <li><a class="dropdown-item" href="media.html">Media</a></li>
+                                <li><a class="dropdown-item" href="cultural.html">Cultural Diplomacy</a></li>
+                                <li><a class="dropdown-item" href="environmental&climate.html">Environmental and Climate Change</a></li>
+                                <li><a class="dropdown-item" href="defence&stratergic.html">Defence and Strategic Affairs</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+                    </ul>
+                </li>
+
+                <!-- Opportunities Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown2" role="button" data-bs-toggle="dropdown">
+                        Opportunities
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown2">
+                        <li><a class="dropdown-item" href="internshipceas.html">Internship with CEAS</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">External Opportunities</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="scholarships&fellowships.html">Scholarships and Fellowships</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Study Abroad</a></li>
+                                <li><a class="dropdown-item" href="jobopportunities.html">Job opportunities</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Activities Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown3" role="button" data-bs-toggle="dropdown">
+                        Activities
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown3">
+                        <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+                        <li><a class="dropdown-item" href="panneldiscussions.html">Panel Discussions</a></li>
+                        <li><a class="dropdown-item" href="webinars.html">Webinars</a></li>
+                        <li><a class="dropdown-item" href="buildingworkshop.html">Capacity - Building Workshop</a></li>
+                        <li><a class="dropdown-item" href="distinguishedlectures.html">Distinguished Lectures</a></li>
+                        <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
+                        <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             </ul>
-        </li>
-        <li><a class="dropdown-item" href="contact.html">Contact us</a></li>
-    </ul>
-</li>
-
-    <!-- Dropdown for Opportunities -->
-       <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-        Opportunities
-    </a>
-        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-        <li><a class="dropdown-item" href="internshipceas.html">Internship with CEAS</a></li>
-        <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#" >External Opportunities</a>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="scholarships&fellowships.html">Scholarships and Fellowships</a></li>
-            <li><a class="dropdown-item" href="contact.html">Study Abroad</a></li>
-            <li><a class="dropdown-item" href="jobopportunities.html">Job opportunities</a></li>
-            </ul>
-        </li>
-
-       </ul>
-    </li> 
-
-<!-- Dropdown for Activities -->
-       <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-        Activities
-    </a>
-        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-        <li><a class="dropdown-item" href="projects.html">Projects</a></li>
-        <li><a class="dropdown-item" href="panneldiscussions.html">Panel Discussions</a></li>
-        <li><a class="dropdown-item" href="webinars.html">Webinars</a></li>
-        <li><a class="dropdown-item" href="buildingworkshop.html">Capacity - Building Workshop</a></li>
-        <li><a class="dropdown-item" href="distinguishedlectures.html">Distinguished Lectures</a></li>
-        <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
-        <li><a class="dropdown-item" href="publications.html">Publications</a></li>
-       </ul>
-    </li> 
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                </ul>
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
         <div class="hero-section text-center text-white">
         <div class="container" style="padding-top: 60px;background: rgba(0, 0, 0, 0.5);padding-bottom: 60px;">
