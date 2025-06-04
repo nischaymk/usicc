@@ -8,13 +8,14 @@ font-family: 'Times New Roman', Times, serif;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-image: url('Untitled design_20250513_224708_0000.png');
+    background-image: url('Untitled\ design.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: bgWave 5s infinite alternate ease-in-out;
+    animation: bgWave 9s infinite alternate ease-in-out;
 }
+
 
 /* Make images responsive */
 img {
