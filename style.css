@@ -621,3 +621,7 @@ html, body {
                 margin-top: 40px;
             }
         }
+
+        .dropdown-submenu {
+    position: relative;
+}
