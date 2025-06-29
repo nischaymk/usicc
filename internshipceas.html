@@ -3,200 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USICC - Internship at CEAS</title>
+    <title>Internship at CEAS | USICC</title>
     <link rel="icon" href="./USICC logo.jpeg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-          <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Allow submenu toggling on mobile
-  document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
-    element.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      let nextMenu = this.nextElementSibling;
 
-      if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
-        nextMenu.classList.toggle('show');
-      }
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Enable dropdown submenus
+        document.querySelectorAll('.dropdown-menu a.dropdown-toggle').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var parent = this.parentElement;
+                var submenu = this.nextElementSibling;
+                
+                if (submenu && submenu.classList.contains('dropdown-menu')) {
+                    if (submenu.style.display === 'block') {
+                        submenu.style.display = 'none';
+                    } else {
+                        // Hide all other submenus
+                        document.querySelectorAll('.dropdown-menu .dropdown-menu').forEach(function(menu) {
+                            menu.style.display = 'none';
+                        });
+                        submenu.style.display = 'block';
+                    }
+                }
+            });
+        });
 
-      // Close others
-      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function (menu) {
-        if (menu !== nextMenu) menu.classList.remove('show');
-      });
-    });
-  });
+        // Close submenus when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.dropdown-menu .dropdown-menu').forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        });
+    </script>
 
-  // Hide submenus when main dropdown is closed
-  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
-    dropdown.addEventListener('hide.bs.dropdown', function () {
-      this.querySelectorAll('.dropdown-menu.show').forEach(function (submenu) {
-        submenu.classList.remove('show');
-      });
-    });
-  });
-});
-</script>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <img src="USICC logo.jpeg" alt="logo" style="height: 70px;margin-right: 10px; border-radius: 50%;" />
+            <a class="navbar-brand" href="index.html">U.S - India Cooperation Circle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown1" role="button" data-bs-toggle="dropdown">
+                            About us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown1">
+                            <li><a class="dropdown-item" href="aboutceas.html">About CEAS</a></li>
+                            <li><a class="dropdown-item" href="aboutusicc.html">About USICC</a></li>
+                            <li><a class="dropdown-item" href="visionobj&goals.html">Our Vision, Objectives & Goals</a></li>
+                            <li><a class="dropdown-item" href="usiccteam.html">USICC Team</a></li>
+                            <li><a class="dropdown-item" href="usiccnetwork.html">USICC Network Experts</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Chapters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="student.html">Students</a></li>
+                                    <li><a class="dropdown-item" href="thinktank.html">Think Tanks</a></li>
+                                    <li><a class="dropdown-item" href="media.html">Media</a></li>
+                                    <li><a class="dropdown-item" href="cultural.html">Cultural Diplomacy</a></li>
+                                    <li><a class="dropdown-item" href="universities.html">Universities</a></li>
+                                    <li><a class="dropdown-item" href="legislators.html">Legislators</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown2" role="button" data-bs-toggle="dropdown">
+                            Opportunities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown2">
+                            <li><a class="dropdown-item active" href="internshipceas.html">Internship with CEAS</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Other Opportunities</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="scholarships&fellowships.html">Scholarships and Fellowships</a></li>
+                                    <li><a class="dropdown-item" href="studyabroad.html">Study Abroad</a></li>
+                                    <li><a class="dropdown-item" href="jobopportunities.html">Job opportunities</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown3" role="button" data-bs-toggle="dropdown">
+                            Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown3">
+                            <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+                            <li><a class="dropdown-item" href="panneldiscussions.html">Panel Discussions</a></li>
+                            <li><a class="dropdown-item" href="webinars.html">Webinars</a></li>
+                            <li><a class="dropdown-item" href="buildingworkshop.html">Workshops</a></li>
+                            <li><a class="dropdown-item" href="distinguishedlectures.html">Distinguished Lectures</a></li>
+                            <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <img src="USICC logo.jpeg" alt="logo" style="height: 70px;margin-right: 10px; border-radius: 50%;" />
-        <a class="navbar-brand" href="index.html">U.S - India Cooperation Circle</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-
-                <!-- About Us Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown1" role="button" data-bs-toggle="dropdown">
-                        About us
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown1">
-                        <li><a class="dropdown-item" href="aboutceas.html">About CEAS</a></li>
-                        <li><a class="dropdown-item" href="aboutusicc.html">About USICC</a></li>
-                        <li><a class="dropdown-item" href="visionobj&goals.html">Our Vision, Objectives & Goals</a></li>
-                        <li><a class="dropdown-item" href="usiccteam.html">USICC team & Testimonials</a></li>
-                        <li><a class="dropdown-item" href="usiccnetwork.html">USICC Network Experts</a></li>
-
-                        <!-- Submenu for Chapters -->
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Chapters</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="student.html">Students</a></li>
-                                <li><a class="dropdown-item" href="thinktank.html">Think Tank</a></li>
-                                <li><a class="dropdown-item" href="media.html">Media</a></li>
-                                <li><a class="dropdown-item" href="cultural.html">Cultural Diplomacy</a></li>
-                                <li><a class="dropdown-item" href="environmental&climate.html">Environmental and Climate Change</a></li>
-                                <li><a class="dropdown-item" href="defence&stratergic.html">Defence and Strategic Affairs</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a class="dropdown-item" href="contact.html">Contact us</a></li>
-                    </ul>
-                </li>
-
-                <!-- Opportunities Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown2" role="button" data-bs-toggle="dropdown">
-                        Opportunities
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown2">
-                        <li><a class="dropdown-item" href="internshipceas.html">Internship with CEAS</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">External Opportunities</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="scholarships&fellowships.html">Scholarships and Fellowships</a></li>
-                                <li><a class="dropdown-item" href="studyabroad.html">Study Abroad</a></li>
-                                <li><a class="dropdown-item" href="jobopportunities.html">Job opportunities</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
-                <!-- Activities Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown3" role="button" data-bs-toggle="dropdown">
-                        Activities
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown3">
-                        <li><a class="dropdown-item" href="projects.html">Projects</a></li>
-                        <li><a class="dropdown-item" href="panneldiscussions.html">Panel Discussions</a></li>
-                        <li><a class="dropdown-item" href="webinars.html">Webinars</a></li>
-                        <li><a class="dropdown-item" href="buildingworkshop.html">Capacity - Building Workshop</a></li>
-                        <li><a class="dropdown-item" href="distinguishedlectures.html">Distinguished Lectures</a></li>
-                        <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
-                        <li><a class="dropdown-item" href="publications.html">Publications</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-            </ul>
+    <div class="internship-hero text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Internship at CEAS</h1>
+            <p class="lead mb-5">Gain valuable experience and mentorship at the Center for East Asian Studies</p>
         </div>
     </div>
-</nav>
 
-         <div class="hero-section text-white text-center my-5">
-    <div class="container">
-        <h1 class="display-5 fw-bold mb-5" style="background: rgba(0,0,0,0.5); padding: 50px;font-size: 60px;">Internship at CEAS</h1>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Introduction -->
+                <div class="testimonial-card mb-5">
+                    <h2 class="mb-4">About the CEAS Internship Programme</h2>
+                    <p>The CEAS Internship Programme is highly competitive, particularly beneficial to students and younger researchers from diverse backgrounds. Interns will get an opportunity to develop various skill sets during the programme. They will be mentored by senior scholars and paired with other interns for collaborative research. A certificate will be provided on satisfactory completion of the internship.</p>
+                    
+                    <div class="testimonial-card mt-4 p-4" style="background: rgba(255, 215, 0, 0.1); border-left-color: transparent;">
+                        <p class="mb-0"><i>"Center for East Asian Studies provided me with constant guidance and support throughout my internship, and the members of this Center are rooted in the vision of delivering impactful innovations and solutions to global challenges in East Asia. Proudly be a part of this team."</i></p>
+                    </div>
+                </div>
 
-        <!-- CEAS Internship Programme -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10 bg-dark bg-opacity-50 p-4 rounded">
-                <h2>CEAS Internship Programme</h2>
-                <p>
-                    CEAS Internship Programme is highly competitive, particularly beneficial to students and younger researchers from diverse backgrounds. Interns will get an opportunity to develop various skill sets during the programme. They will be mentored by senior scholars and paired with other interns for collaborative research. A certificate will be provided on satisfactory completion of the internship.
-                </p>
+                <!-- Roles and Responsibilities -->
+                <div class="testimonial-card mb-5">
+                    <h2 class="mb-4">Roles and Responsibilities</h2>
+                    <p>Interns at CEAS will have the opportunity to contribute in various capacities, including:</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-search"></i>
+                                <h4>Research and Publications</h4>
+                                <ul>
+                                    <li>Conceptualizing research ideas</li>
+                                    <li>Conducting academic research</li>
+                                    <li>Writing and publishing research papers, perspectives, and working papers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-hashtag"></i>
+                                <h4>Social Media & Website Management</h4>
+                                <ul>
+                                    <li>Updating and managing the CEAS website</li>
+                                    <li>Creating and curating content for social media outreach</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-tasks"></i>
+                                <h4>Administration</h4>
+                                <ul>
+                                    <li>Mentoring new interns and team members</li>
+                                    <li>Tracking and managing ongoing activities</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h4>Events</h4>
+                                <ul>
+                                    <li>Organizing academic events</li>
+                                    <li>Planning and coordinating logistics</li>
+                                    <li>Executing event-related tasks efficiently</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-truck"></i>
+                                <h4>Logistics Support</h4>
+                                <ul>
+                                    <li>Assisting in operational and logistical requirements for events and projects</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="role-card h-100">
+                                <i class="fas fa-project-diagram"></i>
+                                <h4>Projects</h4>
+                                <ul>
+                                    <li>Writing proposals and reports</li>
+                                    <li>Executing and managing project deliverables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="testimonial-card mb-5">
+                    <h2 class="mb-4">What Our Interns Say</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"My internship at CEAS has been a great learning experience, and I am grateful for the opportunity to have interned with such a prestigious institution. I consider the experience highly valuable as it gave me insights into conducting organized research and structuring my writing effectively."</i></p>
+                                <div class="mt-3 fw-bold">Josna Shibu Nalhew</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"The time I spent at the centre was refreshing and I gained a deeper insight into the world of geopolitics by the seminars held by the Centre."</i></p>
+                                <div class="mt-3 fw-bold">Vishesh Sharma</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"My time with the centre helped me navigate my interests while simultaneously broadening my perspectives of real-world problems. My sessions with my mentors helped me polish my skills in research and writing."</i></p>
+                                <div class="mt-3 fw-bold">Parvathy KG</div>
+                                <div class="text-gold">Junior Research Affiliate, January 2023 - January 2024</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"The internship with the centre was a great learning experience and a wonderful opportunity. The centre broadened my horizons and helped me identify my interests, strengths and weaknesses."</i></p>
+                                <div class="mt-3 fw-bold">Rose Paul</div>
+                                <div class="text-gold">Research Affiliate, June 2022 - July 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Testimonials -->
+                <div class="testimonial-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"My association with the Centre has been an invariably fulfilling one, helping me build a foundation that transcends my tenure. The team aided and guided my academic curiosities with a kindred spirit throughout."</i></p>
+                                <div class="mt-3 fw-bold">Sejal Sharma</div>
+                                <div class="text-gold">Research Affiliate, January 2023 - September 2023</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"I had the privilege of working on a comprehensive research project titled Comparative Trade Analysis between India's Look East, Look West, and Look North Policies. This experience has been invaluable in shaping my understanding of international trade dynamics."</i></p>
+                                <div class="mt-3 fw-bold">Praveen Krishna</div>
+                                <div class="text-gold">Research Affiliate, May 2023 - July 2024</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"The Centre for East Asian Studies (CEAS) has been an invaluable learning platform, equipping me with essential research skills and the ability to make research relevant and functional. The mentorship I received was incredibly supportive."</i></p>
+                                <div class="mt-3 fw-bold">Shrestha Medhi</div>
+                                <div class="text-gold">Research Affiliate, June 2023 - June 2024</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-card h-100">
+                                <p><i>"My time as an intern gave me lot of perspectives about team work. The insightful seminars, research works and expert guidance really helped me in gaining deeper understanding about the region."</i></p>
+                                <div class="mt-3 fw-bold">Goulham Sankar</div>
+                                <div class="text-gold">Junior Research Affiliate, September 2022 - July 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Eligibility Criteria -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10 bg-dark bg-opacity-50 p-4 rounded">
-                <h2>Eligibility Criteria</h2>
-                <p>
-                    Open to students pursuing Undergraduate, Master’s, or PhD programs. Selection is purely merit-based. Candidates with a strong spirit to learn and grow will be given high priority.
-                </p>
-            </div>
-        </div>
-
-        <!-- Internship Duration -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10 bg-dark bg-opacity-50 p-4 rounded">
-                <h2>Internship Duration</h2>
-                <p>
-                    The internship is flexible, with a minimum commitment of one month.
-                </p>
-            </div>
-        </div>
-
-        <!-- Application Procedure -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10 bg-dark bg-opacity-50 p-4 rounded">
-                <h2>Application Procedure</h2>
-                <p>
-                    Send an email expressing interest to <a href="mailto:contact.ceas@christuniversity.in" class="text-white">contact.ceas@christuniversity.in</a> with the documents listed below. Shortlisted candidates will be invited for an interview.
-                </p>
-            </div>
-        </div>
-
-        <!-- Documents to be Submitted -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10 bg-dark bg-opacity-50 p-4 rounded">
-                <h2>Documents to be Submitted</h2>
-                <p class="text-start">
-                    1. Curriculum Vitae (CV) <br>
-                    2. Two letters of recommendation from present or past institutions <br>
-                    3. An original writing sample (published or unpublished work) of around 2,000 words <br>
-                    4. Statement of Purpose
-                </p>
+            <!-- Sidebar with Application Info -->
+            <div class="col-lg-4">
+                <div class="internship-sidebar sticky-top" style="top: 20px;">
+                    <h3 class="mb-4">Internship Details</h3>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-user-graduate me-2 text-gold"></i> Eligibility Criteria</h5>
+                        <p>Open to students pursuing Undergraduate, Master's, or PhD programs. Selection is purely merit-based. Candidates with a strong spirit to learn and grow will be given high priority.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-calendar me-2 text-gold"></i> Duration</h5>
+                        <p>The internship is flexible, with a minimum commitment of one month.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-paper-plane me-2 text-gold"></i> How to Apply</h5>
+                        <p>Send an email expressing interest to <a href="mailto:contact.ceas@christuniversity.in" class="text-gold">contact.ceas@christuniversity.in</a> with the required documents. Shortlisted candidates will be invited for an interview.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-file-alt me-2 text-gold"></i> Required Documents</h5>
+                        <ul class="timeline">
+                            <li class="timeline-item">Curriculum Vitae (CV)</li>
+                            <li class="timeline-item">Two letters of recommendation</li>
+                            <li class="timeline-item">Original writing sample (~2000 words)</li>
+                            <li class="timeline-item">Statement of Purpose</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:contact.ceas@christuniversity.in" class="btn btn-gold w-100 mt-3">
+                        <i class="fas fa-envelope me-2"></i> Apply Now
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
    <footer class=" text-white text-center py-3" style="font-weight: bold;">
         <p>&copy; 2025 US-India Cooperation Circle</p>
         <div class="d-flex justify-content-center gap-3">
-            <a href="https://www.linkedin.com/in/ceas-christ-university/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/ceas_christuniversity/?igsh=MTJhbnp0NTFod3J6cQ%3D%3D#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/CEAS_eastasia?t=wffWl4StaHCsfwkuD3ZfXw&s=08" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.youtube.com/@CentreforEastAsianStudies" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/u-s-india-cooperation-circle/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/usicc_/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/usicc_?lang=en" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@USICC_" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
