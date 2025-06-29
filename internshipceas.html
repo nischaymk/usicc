@@ -13,37 +13,37 @@
 <body>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Enable dropdown submenus
-        document.querySelectorAll('.dropdown-menu a.dropdown-toggle').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                var parent = this.parentElement;
-                var submenu = this.nextElementSibling;
-                
-                if (submenu && submenu.classList.contains('dropdown-menu')) {
-                    if (submenu.style.display === 'block') {
-                        submenu.style.display = 'none';
-                    } else {
-                        // Hide all other submenus
-                        document.querySelectorAll('.dropdown-menu .dropdown-menu').forEach(function(menu) {
-                            menu.style.display = 'none';
-                        });
-                        submenu.style.display = 'block';
-                    }
-                }
-            });
-        });
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Allow submenu toggling on mobile
+  document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      let nextMenu = this.nextElementSibling;
 
-        // Close submenus when clicking outside
-        document.addEventListener('click', function() {
-            document.querySelectorAll('.dropdown-menu .dropdown-menu').forEach(function(menu) {
-                menu.style.display = 'none';
-            });
-        });
-    </script>
+      if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
+        nextMenu.classList.toggle('show');
+      }
+
+      // Close others
+      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function (menu) {
+        if (menu !== nextMenu) menu.classList.remove('show');
+      });
+    });
+  });
+
+  // Hide submenus when main dropdown is closed
+  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('hide.bs.dropdown', function () {
+      this.querySelectorAll('.dropdown-menu.show').forEach(function (submenu) {
+        submenu.classList.remove('show');
+      });
+    });
+  });
+});
+</script>
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
